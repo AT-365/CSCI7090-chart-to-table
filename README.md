@@ -31,7 +31,8 @@ The slides walk through every step, including the error analysis.
 | `V3_4_6-Code/_v332_metric_original.py` | Reference copy of the original metric, used by the tests |
 | `V3_4_6-Code/test_*.py` | Unit tests (standard-library `unittest`) |
 | `V3_4_6-Code/SHA256SUMS.txt` | Checksums the notebook verifies in cell 1c |
-| `slides/` | Final presentation (PowerPoint, with speaker notes) |
+| `slides/` | Final presentation (PowerPoint) |
+| `splits/` | The frozen train / validation / test splits (seed 42) used in both phases: chart IDs and metadata only, no images |
 
 The modules in `V3_4_6-Code/` are the midterm (V3.4.6) code, reused unchanged in Phase B.
 
@@ -39,7 +40,14 @@ The modules in `V3_4_6-Code/` are the midterm (V3.4.6) code, reused unchanged in
 
 1. **Data.** Download the competition data from Kaggle
    (<https://www.kaggle.com/competitions/benetech-making-graphs-accessible/data>).
-   It is not included here because of its size and license.
+   It is not included here because of its size and license. The notebook reads the images straight
+   from the Kaggle zip, so keep it zipped (`benetech-making-graphs-accessible.zip`).
+   - **Splits.** Copy the three CSVs in `splits/` into `BenetechData/Project Vertical Bar Graphs/`.
+     They hold the vertical-bar charts only: 13,432 training charts, 2,878 validation, 2,879 test.
+   - **Pilot bundle.** The self-tests in Step 1 and the pilot re-runs in Steps 4 to 7 also read `V3.3.2_pilot_bundle.zip`
+     from `Project Vertical Bar Graphs/V3.3.2_pilot_model_selection/2026-10-12_20-21-23/`. It is built
+     by the midterm V3.3.2 notebook (submitted on Folio on October 17) and is available on request.
+     It contains Kaggle chart images and annotations, so it is not posted here.
 2. **Code (required).** The notebook needs `V3_4_6-Code.zip`, the midterm code release. Cell 1c
    looks for that exact file name, unzips it and imports `t4_pipeline.py` and `chart_eval.py` from it.
    Use the original `V3_4_6-Code.zip` (submitted on Folio with the midterm and again with the final),
