@@ -40,8 +40,12 @@ The modules in `V3_4_6-Code/` are the midterm (V3.4.6) code, reused unchanged in
 1. **Data.** Download the competition data from Kaggle
    (<https://www.kaggle.com/competitions/benetech-making-graphs-accessible/data>).
    It is not included here because of its size and license.
-2. **Code.** Zip the files in `V3_4_6-Code/` into `V3_4_6-Code.zip`. Put that zip, the Kaggle zip
-   and the notebook in one Google Drive folder. Cell 1a sets the folder paths; edit them to match.
+2. **Code (required).** The notebook needs `V3_4_6-Code.zip`, the midterm code release. Cell 1c
+   looks for that exact file name, unzips it and imports `t4_pipeline.py` and `chart_eval.py` from it.
+   Use the original `V3_4_6-Code.zip` (submitted on Folio with the midterm and again with the final),
+   or zip the files in `V3_4_6-Code/` under that name. Either works, because cell 1c only checks the
+   `.py` files against `SHA256SUMS.txt`. Put the zip, the Kaggle zip and the notebook in one Google
+   Drive folder. Cell 1a sets the folder paths; edit them to match.
 3. **Runtime.** Google Colab (I ran it through the VS Code Colab extension). Steps 1 to 3 run on CPU.
    Training and generation (Step 4 onward) need a T4 GPU.
 4. Run the cells in order. Expensive cells save their results to Drive, so a disconnect can resume.
